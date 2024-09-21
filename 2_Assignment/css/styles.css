@@ -1,0 +1,361 @@
+html,
+body{
+    font-size: 15px;
+    /* add font */
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    margin: 0px;
+    
+    font-size: 2rem;
+}
+
+/* SHARED STYLES --------> ENDS HERE */
+/****************************************************/
+/* PAGE HEADER --------> STARTS HERE */
+.page-header{
+    display: grid;
+    grid-template-columns: 75px 200px 1fr; /* website , search , menu */
+
+    margin: 0px 1%;
+
+    border-bottom: 2px lightslategray solid;
+}
+
+/* WBSITE NAME */
+.website-name{
+    align-self: center;
+}
+
+/* SEARCH */
+.page-header-nav{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+
+    align-items: center;
+}
+
+.search-form{
+    display: grid;
+    grid-template-columns: 1fr 75px;
+
+    width: 50%;
+    height: 50%;
+
+    justify-self: center;
+}
+
+.search-btn{    
+    margin-left: 5px;
+}
+
+/* MENU */
+.menu-btn{
+    justify-self: right;
+    height: 50%;
+}
+/* PAGE HEADER --------> ENDS HERE */
+/****************************************************/
+/* PAGE MAIN --------> STARTS HERE */
+.page-main-body{
+    display: grid;
+    grid-template-rows: 75px 1fr;
+}
+
+.page-main{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    margin: 1% 5%;
+}
+
+.card{
+    border-radius: 15px;
+
+    border: black 3px solid;
+    padding: 10px;
+}
+
+.card-header{
+    font-size: 1.3rem;
+    border-bottom: 1px solid black;
+    margin: 0px 15px;
+    text-align: center;
+}
+/* QUESTION CARD */
+.question-card{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+
+    margin-bottom: 25px;
+}
+
+.card-vote{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.qcard-vote-num{
+    font-size: 1.2rem;
+}
+
+.qcard-vote-btn{
+    background-color: lightgray;
+    border-radius: 25%;
+}
+
+.qcard-body{
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+
+    margin: 0px 10px;
+}
+
+.qcard-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    border-bottom: 1px solid lightgray;
+}
+
+.qcard-author{
+    display: flex;
+    align-items: center;
+}
+
+.qcard-author p{
+    padding-right: 5px;
+}
+
+
+.question-footer{
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+/* QUESTION CREATION */
+.question-creation-card{
+    height: 700px;
+    padding: 1%;
+
+}
+
+.question-creation-form{
+    display: grid;
+    grid-template-rows: 50px 600px 50px
+}
+
+#create-question-title-inpt{
+    font-size: 1.5rem;
+}
+
+#create-question-details-inpt{
+    height: 90%;
+    
+    margin: 2.5% 0px;
+    
+    resize: none;
+    
+    font-size: 1.2rem;
+}
+
+#create-question-title-inpt,
+#create-question-details-inpt{
+    width: 99%;
+
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+#create-question-submit{
+    width: 100px;
+
+    font-size: 1.3rem;
+
+    justify-self: right;
+}
+
+/* SIGN UP */
+.page-main-signup{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-card{
+    width: 500px;
+    height: 600px;
+
+    margin-top: 5%;
+}
+
+.signup-card-header{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-card-body{
+    display: grid;
+
+    margin: 5%;
+    text-align: left;
+    
+    font-size: 1.2rem;
+}
+
+.signup-card-body input{
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+.signup-card-body input[type="submit"]{
+    height: 55px;
+}
+
+.signup-card-body p{
+    text-align: center;
+}
+
+/* QUESTION DETAILS */
+.question-reply-form textarea{
+    width: 100%;
+    min-height: 150px;
+
+    resize: none;
+
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+.question-reply-form input[type="submit"]{
+    height: 50px;
+    width: 100px;
+
+    margin-top: 5px;
+
+    float: right;
+}
+
+/* PAGE MAIN --------> ENDS HERE */
+/****************************************************/
+/* ASIDE --------> STARTS HERE */
+.sidebar-card{
+    position: fixed;
+    margin-left: 8%;
+    margin-top: 75px;
+
+    width: 17%;
+
+    text-align: center;
+}
+
+.sidebar-card-info-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-card-user{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-card-user p{
+    padding-left: 5px;
+
+    font-size: 1.5rem;
+}
+
+.sidebar-card-body{
+    display: grid;
+
+    margin: 5%;
+    text-align: left;
+    
+    font-size: 1.3rem;
+}
+
+.sidebar-card-body > input[type="text"],
+.sidebar-card-body > input[type="password"]{
+    height: 25px
+}
+
+.sidebar-card-input-label-password{
+    margin-top: 15px
+}
+
+.sidebar-card-password-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.sidebar-card-password-options input[type="checkbox"]{
+    margin-left: 0px;
+}
+
+.sidebar-card-body input[type="submit"]{
+    
+    width: 95%;
+    height: 60px;
+
+    margin: 2.5%;
+
+    font-size: 1.5rem;
+}
+
+.sidebar-card-link-my-questions{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.sidebar-card-qpreview{
+    display: grid;
+    grid-template-rows: 1fr 35px;
+    margin: 10px;
+    padding: 4px;
+    
+    border: 1px solid black;
+    border-radius: 5px;
+
+    text-align: center;
+}
+
+.sidebar-card-qpreview-title{
+    margin: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-card-qpreview-stats{
+    display: flex;
+    justify-content: space-between;
+    
+    border-top: 1px solid black;
+
+    font-size: 0.9rem;
+}
+
+.sidebar-card-qpreview-votes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
