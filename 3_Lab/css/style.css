@@ -1,0 +1,291 @@
+/* 
+    Common CSS styles for all the files begins
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    background-color: #fff;
+    /* CSS Todo 1: Roboto is a web delivered Google Font. 
+                   Find and CSS @import it at the top of this file */
+    font-family: 'Roboto';
+}
+
+
+/* 
+    Common CSS styles for all the files ends
+*/
+
+
+
+/* 
+    CSS styles for Login and Signup pages begins
+*/
+#container{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 150px auto 100px;
+    grid-gap: 5px;
+
+    /* vh: viewport height */
+    min-height: 100vh;
+    
+    /* vw: viewport width */
+    width: 100vw;
+}
+
+#header-auth{
+    background-color: #004F2E;
+    color: white;
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+header{
+    display: grid;
+    align-items: center;
+}
+
+header h1
+{
+    /* CSS Todo 2: Make the header text larger than a normal h1 */
+    font-size: 50px;
+
+    /* CSS Todo 3: Align the header text to the center both horizontally and vertically.
+                   Modify its parent's CSS too if necessary. */
+    text-align: center;
+}
+
+#main-left{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#main-center{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#main-right{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+ 
+#footer-auth{
+    background-color: black;;
+    color: white;
+    width: 100%;
+    text-align: center;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.auth-form {
+    margin-top: 60px;
+   /* CSS Todo 4: Make a border around the form with three properties: border type, color and, thickness. */
+   border: #004F2E 1px solid;
+   /* CSS Todo 5: Make edge of the border rounded. */
+   border-radius: 25px;
+    padding: 0px 20px 40px 20px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+
+input {
+    /* CSS Todo 6: Place the input boxes at the right most side. */
+    float: right;
+    /* CSS Todo 7: Make sure the labels and input boxes have adequate space between them
+                   and also have uniform distances from the boundary borders.*/
+    margin: 0px;
+    padding: 2px 0px 2px 0px;
+    width: 50%;
+}
+
+input[type="submit"]{
+    width: 100px;
+}
+
+/* CSS Todo 8: Make sure the <p> tags with class '.input-field' have adequate amount of spacing between them.*/
+p.input-field{
+    margin: 25px 0px 25px 0px;
+}
+
+.foot-note{
+    margin-left: 27%;
+}
+
+
+.footer-text{
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+/* 
+    CSS styles for Login and Signup pages ends
+*/
+
+
+/* 
+    CSS styles for loginHistory.html begins
+*/
+#container-login-history{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 150px auto 100px;
+    grid-gap: 5px;
+    width: 100%;
+}
+
+#header-login-history{
+    background-color: #004F2E;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+}
+
+#main-left-login-history{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#user-info{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: center;
+}
+
+#login-sessions{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: center;
+}
+
+#main-right-login-history{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+ 
+#footer-login-history{
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.logout {
+    font-size: 15px;
+    float: right;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 7px;
+    margin-right: 20px;
+}
+
+#header-login-history h1{
+    font-size: 300%;
+    align-self: center;
+    justify-self: center;
+    width: 100%
+}
+
+.update-info {
+    /* CSS Todo 9: Add necessary styles for the edit page link to make it look like a button (see the reference photo) */
+    background-color: rgba(211, 211, 211, 50);
+    border: black 2px solid;
+    border-radius: 5px;
+
+    padding: 4px;
+    text-decoration: none;
+    color: black;
+}
+
+img{
+    width: 100%;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #004F2E;;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+section {
+    color: #34495E;
+    padding-right: 30px;
+}
+
+img{
+    width: 100%;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+
+aside{
+    padding-left: 30px;
+    width: 100%;
+}
+
+#user-data{
+    padding: 0px 0px 30px 20px;
+    margin: 20px 0px;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+
+/* CSS Todo 10: Make sure the user name, date of birth and edit page link have adequate spacing between them and also 
+from the boundary borders. */
+section#user-info div#user-data h3,
+section#user-info div#user-data p,
+section#user-info div#user-data a{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.session {
+    margin: 10px 0px;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    width: 100%;
+    color: #34495E;
+    margin-left: 17px;
+    padding-left: 10px;
+}
+
+/* 
+    CSS styles for loginHistory.html ends
+*/
