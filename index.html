@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CS215 Homepage</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <!-- this meta is required for CSS validation to work properly -->
+  <meta name="referrer" content="unsafe-url" />
+
+  <script>
+    
+    function changeVideoToShrek(){
+      console.log("SHREK");
+
+      let vidShrek = document.getElementById("video-shrek");
+      let vidBee = document.getElementById("video-bee");
+
+      console.log(vidBee.getAttribute("hidden"));
+
+      vidBee.setAttribute("hidden", null);
+      vidBee.currentTime = 0;
+      vidBee.pause();
+
+      vidShrek.toggleAttribute("hidden", "");
+      vidShrek.play();
+    }
+    
+    function changeVideoToBee(){
+      console.log("BEE");
+
+      let vidShrek = document.getElementById("video-shrek");
+      let vidBee = document.getElementById("video-bee");
+
+      vidShrek.setAttribute("hidden", null);
+      vidShrek.currentTime = 0;
+      vidBee.pause();
+
+      vidBee.toggleAttribute("hidden", "");
+      vidBee.play();
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <header id="header">
+    <h1>CS 215 | Michael Steenkamp | Portfolio</h1>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="1_Assignment/Assignment 1.pdf">Assignment 1</a>
+      <a href="2_Assignment/html/mp-before-login.html">Assignment 2</a>
+      <a href="3_Assignment/html/mp-before-login.html">Assignment 3</a>
+      <a href="4_Assignment/ERD.pdf">Assignment 4</a>
+      <a href="5_Assignment/php/mp-before-login.php">Assignment 5</a>
+      <a href="6_Assignment/php/mp-before-login.php">Assignment 6</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section>
+      <h2>About me</h2>
+
+      <img src="images/beeshrek.png" alt="">
+
+      <div class="video-btn-container">
+        <p class="video-btn" id="video-btn-shrek" onclick="changeVideoToShrek()">SHREK</p>
+        <p class="video-btn" id="video-btn-bee" onclick="changeVideoToBee()">BEE</p>
+      </div>
+
+      <video width="640" hidden muted class="video-container" id="video-shrek">
+        <source src="images/shrek.mp4" type="video/mp4">
+      </video> 
+
+      <video width="640" hidden muted class="video-container" id="video-bee">
+        <source src="images/bee.mp4" type="video/mp4">
+      </video> 
+
+
+      <article>
+        <h3>Michael Steenkamp</h3>
+        <p>
+          Tell us about yourself. What year and faculty are you in? Your goals and ambitions.
+        </p>
+        <p>
+          I am originally from South Africa but moved to canada about 5 or so years ago and now 
+          permanenty reside just outside of Regina.I am 2nd year studying for a Bachelors Degree
+          in Computer Science. My goals and ambitions are to learn as much as possible but to also
+          have fun at the same time.
+        </p>
+      </article>
+
+      <article>
+        <h3>My Hobbies</h3>
+        <p>
+          What are your hobbies, favourite dishes, and favourite quotes?
+        </p>
+        <p>
+          My hobbies include writing programs using different laguages and different libraries, 
+          building Lego, playing video games, working out, and playing sport such as tennis and
+          volleyball. My favourite dish would have to be ramen and my favourite quote is 
+          "thats rough buddy" - Prince Zuko.
+        </p>
+      </article>
+
+      <article>
+        <h3>CS 215 Goals</h3>
+        <p>
+          Tell us why you took CS 215 and what are your expectations from the course?
+        </p>
+        <p>
+          I took CS 215 because it is a part of the path that I have to take in order to get my degree,
+          however I also enjoy writing web based programs and have previous experience working with 
+          HTML and CSS as I used it in parter with a library called P5.JS. My expectations of this course
+          is to have a better understanding of how the Internet and web works and its architecture. 
+        </p>
+      </article>
+
+    </section>
+
+    <aside>
+      <h2>Lab Assignments</h2>
+      <ul>
+        <li>
+          <a href="">Lab 1</a>
+        </li>
+        <li>
+          <a href="2_Lab/sketches.pdf">Lab 2</a>
+        </li>
+        <li>
+          <a href="3_Lab/login.html">Lab 3</a>
+        </li>
+        <li>
+          <a href="4_Lab/index.html">Lab 4</a>
+        </li>
+        <li>
+          <a href="5_Lab/login.html">Lab 5</a>
+        </li>
+        <li>
+          <a href="6_Lab/login.html">Lab 6</a>
+        </li>
+        <li>
+          <a href="7_Lab/ERD.drawio.png">Lab 7</a>
+        </li>
+        <li>
+          <a href="8_Lab/logfile.txt">Lab 8</a>
+        </li>
+        <li>
+          <a href="9_Lab/login.php">Lab 9</a>
+        </li>
+        <li>
+          <a href="10_Lab/login.php">Lab 10</a>
+        </li>
+        <li>
+          <a href="11_Lab/login.php">Lab 11</a>
+        </li>
+
+      </ul>
+
+    </aside>
+  </div>
+
+  <footer>
+    <p> CS 215: Web &amp; Database Programming</p>
+    <p><a href="https://validator.w3.org/check%3Furi%3Dhttp%253A%252F%252Fwww.webdev.cs.uregina.ca%252F%257Emsa173%252F1_Lab%252F%26charset%3D%2528detect%2Bautomatically%2529%26doctype%3DXHTML%2B1.1%26group%3D0%26user-agent%3DW3C_Validator%252F1.3%2Bhttp%253A%252F%252Fvalidator.w3.org%252Fservices">VALIDATION XHTML 1.1  </a></p>
+    <p>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+              src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+              alt="Valid CSS!" />
+          </a>
+      </p>
+  </footer>
+</body>
+
+</html>
