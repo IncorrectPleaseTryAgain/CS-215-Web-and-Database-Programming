@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CS215 Homepage</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- JS file containing event handlers added here -->
+    <script src="js/eventHandlers.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header-auth">
+            <h1>My Login History</h1>
+        </header>
+        <main id="main-left">
+
+        </main>
+        <main id="main-center">
+            <!-- Todo 3: Add an id attribute to the form tag -->
+            <form action="login.html" method="post" class="auth-form" id="signup-form">
+                <p class="input-field">
+                    <label for="fname">First Name</label>
+                     <!-- Example: id attribute added below as an example -->
+                    <input type="text" name="fname" id="fname" />
+                </p>
+                <p class="input-field">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname" />
+                </p>
+                <p class="input-field">
+                    <label for="uname">Username</label>
+                    <!-- Todo 3: Add an id attribute below -->
+                    <input type="text" name="username" id="uname"/>
+                </p>
+                <p class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password"/>
+                </p>
+                <p class="input-field">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" name="cpassword" id="cpassword"/>
+                </p>
+                <p class="input-field">
+                    <label for="dob">Date of Birth</label>
+                    <!-- Todo 3: Add an id attribute below -->
+                    <input type="date" name="dob" id="dob"/>
+                </p>
+                <p class="input-field">
+                    <label for="profilephoto">Profile Photo</label>
+                    <input type="file" name="profilephoto" accept="image/*" id="profilephoto" />
+                </p>
+                <p>
+                    <input type="submit" class="form-submit" value="Signup" />
+                </p>
+            </form>
+            <div class="foot-note">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </main>
+        <main id="main-right">
+
+        </main>
+        <footer id="footer-auth">
+            <p class="footer-text">CS 215: Lab 3 Solution</p>
+        </footer>
+    </div>
+    <!-- JS file containing event registration added here -->
+    <script src="js/eventRegisterSignup.js"></script>
+</body>
+
+</html>
