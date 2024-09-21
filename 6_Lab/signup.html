@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CS215 Homepage</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/eventHandlers.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header-auth">
+            <h1>My Login History</h1>
+        </header>
+        <div id="left-panel"></div>
+        <main id="main-panel">
+            <form action="login.html" method="post" class="auth-form" id="signup-form">
+                <div class="input-field">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" /><br>
+                    <!-- Example: A <p> tag is added here to display an error message -->
+                    <p id="error-text-fname" class="error-text hidden">First name is invalid</p>
+                </div>
+                <div class="input-field">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" />
+                    <!-- Todo 4: Add a <p> tag here to display an error message -->
+                    <p id="error-text-lname" class="error-text hidden">Last name is invalid</p>
+                </div>
+                <div class="input-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" />
+                    <!-- Todo 4: Add a <p> tag here to display an error message -->
+                    <p id="error-text-username" class="error-text hidden">Username is invalid</p>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" />
+                    <!-- Todo 4: Add a <p> tag here to display an error message -->
+                    <p id="error-text-password" class="error-text hidden">Password is invalid</p>
+                </div>
+                <div class="input-field">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" id="cpassword" name="cpassword" />
+                    <!-- Todo 4: Add a <p> tag here to display an error message -->
+                    <p id="error-text-cpassword" class="error-text hidden">Password does not match</p>
+                </div>
+                <div class="input-field">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" />
+                    <!-- Todo 4: Add a <p> tag here to display an error message --> 
+                    <p id="error-text-dob" class="error-text hidden">Date of birth is invalid</p>
+                </div>
+                <div class="input-field">
+                    <label for="profilephoto">Profile Photo</label>
+                    <input type="file" id="profilephoto" name="profilephoto" accept="image/*"/>
+                    <!-- Todo 4: Add a <p> tag here to display an error message -->
+                    <p id="error-text-profilephoto" class="error-text hidden">Profile photo is invalid</p>
+                </div>
+
+                <p>
+                    <input type="submit" class="form-submit" value="Signup" />
+                </p>
+            </form>
+            <div class="foot-note">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </main>
+        <div id="right-panel"></div>
+        <footer id="footer-auth">
+            <p class="footer-text">CS 215: Lab 5 Solution</p>
+        </footer>
+    </div>
+    <script src="js/eventRegisterSignup.js"></script>
+</body>
+
+</html>

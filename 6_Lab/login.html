@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CS215 Homepage</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/eventHandlers.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header-auth">
+            <h1>My Login History</h1>
+        </header>
+        <div id="left-panel"></div>
+        <main id="center-panel">
+            <form action="loginHistory.html" method="post" class="auth-form" id="login-form">
+                <div class="input-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="email" />
+                    <!-- Example: A <p> tag is added here to display an error message -->
+                    <p id="error-text-username" class="error-text hidden">Username is invalid</p>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" />
+                    <!-- Todo 3: Add a <p> tag here to display an error message -->
+                    <p id="error-text-password" class="error-text hidden">Password is Invalid</p>
+                </div>
+                <p class="input-field">
+                    <input type="submit" class="form-submit" value="Login" />
+                </p>
+            </form>
+            <div class="foot-note">
+                <p>Don't have an account? <a href="signup.html">Signup</a></p>
+            </div>
+        </main>
+        <div id="main-right"></div>
+        <footer id="footer-auth">
+            <p class="footer-text">CS 215: Lab 5 Solution</p>
+        </footer>
+    </div>
+    <script src="js/eventRegisterLogin.js"></script>
+</body>
+
+</html>
