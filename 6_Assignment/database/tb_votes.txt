@@ -1,0 +1,33 @@
++-------------+------+------+-----+---------+----------------+
+| Field       | Type | Null | Key | Default | Extra          |
++-------------+------+------+-----+---------+----------------+
+| vote_id     | int  | NO   | PRI | NULL    | auto_increment |
+| answer_id   | int  | NO   | MUL | NULL    |                |
+| user_id     | int  | NO   | MUL | NULL    |                |
+| vote_status | int  | NO   |     | 0       |                |
++-------------+------+------+-----+---------+----------------+
+
++------------------------------------------------------------+
+
+CREATE TABLE votes (
+	vote_id INT AUTO_INCREMENT,
+	answer_id INT NOT NULL,
+	user_id INT NOT NULL,
+	vote_status INT NOT NULL DEFAULT 0,
+
+	PRIMARY KEY (vote_id),
+
+	FOREIGN KEY (answer_id) REFERENCES answers(answer_id),
+	FOREIGN KEY (user_id) REFERENCES users(user_id),
+
+	CONSTRAINT CHK_vote_status CHECK (vote_status >= -1 AND vote_status <= 1),
+	CONSTRAINT CHK_answer_user UNIQUE (answer_id, user_id)
+);
+
++------------------------------------------------------------+
+
+INSERT INTO votes (answer_id, user_id)
+VALUES (
+	1,
+	1
+);
