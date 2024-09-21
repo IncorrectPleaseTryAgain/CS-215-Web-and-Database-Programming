@@ -1,0 +1,23 @@
+A dynamic web application that displays user's login history.
+
+Usability Requirement:
+    Core user tasks:
+        a. Login to user's account
+        b. View login history
+        c. Update user information
+        d. Logout from the system
+    
+    Important but no common tasks:
+        e. Create a new account in the system by providing the following information:
+            - first name
+            - last name
+            - username
+            - password
+            - date of birth
+            - avatar
+
+
+Interface Elements:
+    1. Signup Page (e)
+    2. Login Page (a)
+    3. Home Page (b,c,d)
