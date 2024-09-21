@@ -1,0 +1,320 @@
+********** CREATE USER TABLE **********
+CREATE TABLE user (
+	user_id INT AUTO_INCREMENT,
+	username VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	dob DATETIME NOT NULL,
+	profile_picture VARCHAR(255) NOT NULL,
+	PRIMARY KEY (user_id)
+);
+
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| user_id         | int          | NO   | PRI | NULL    | auto_increment |
+| username        | varchar(50)  | NO   |     | NULL    |                |
+| password        | varchar(50)  | NO   |     | NULL    |                |
+| email           | varchar(50)  | NO   |     | NULL    |                |
+| dob             | datetime     | NO   |     | NULL    |                |
+| profile_picture | varchar(255) | NO   |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+
+********** INSERT USER ***********
+INSERT INTO user (user_id, username, password, email, dob, profile_picture)
+VALUES (
+	101,
+	"uname-101",
+	"pwd-101",
+	"101@email.com",
+	"2000-01-01",
+	"101.png"
+);
+
+
+********** CREATE QUESTION TABLE **********
+CREATE TABLE question (
+	question_id INT AUTO_INCREMENT,
+	user_id	INT NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	content VARCHAR(1500) NOT NULL,
+	post_date DATETIME NOT NULL,
+	PRIMARY KEY (question_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
+
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| question_id | int           | NO   | PRI | NULL    | auto_increment |
+| user_id     | int           | NO   | MUL | NULL    |                |
+| title       | varchar(255)  | NO   |     | NULL    |                |
+| content     | varchar(1500) | NO   |     | NULL    |                |
+| post_date   | datetime      | NO   |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+
+********** INSERT QUESTION ***********
+INSERT INTO question (question_id, user_id, title, content, post_date)
+VALUES (
+	1101,
+	101,
+	"title-1101",
+	"c-1101",
+	"2002-01-01"
+);
+
+********** CREATE ANSWER TABLE **********
+CREATE TABLE answer (
+	answer_id INT AUTO_INCREMENT,
+	user_id	INT NOT NULL,
+	question_id INT NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	content VARCHAR(1500) NOT NULL,
+	post_date DATETIME NOT NULL,
+	PRIMARY KEY (answer_id),
+	FOREIGN KEY (question_id) REFERENCES question(question_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
+
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| answer_id   | int           | NO   | PRI | NULL    | auto_increment |
+| user_id     | int           | NO   | MUL | NULL    |                |
+| question_id | int           | NO   | MUL | NULL    |                |
+| title       | varchar(255)  | NO   |     | NULL    |                |
+| content     | varchar(1500) | NO   |     | NULL    |                |
+| post_date   | datetime      | NO   |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+
+********** INSERT ANSWER ***********
+INSERT INTO answer (answer_id, question_id, user_id, title, content, post_date)
+VALUES (
+	2101,
+	1101,
+	101,
+	"title-2101",
+	"c-2101",
+	"2006-01-01"
+);
+
+********** CREATE VOTE TABLE **********
+CREATE TABLE vote (
+	vote_id INT AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	question_id INT,
+	answer_id INT,
+	vote_status BOOLEAN,
+	PRIMARY KEY (vote_id),
+	FOREIGN KEY (user_id) REFERENCES  user(user_id),
+	FOREIGN KEY (question_id) REFERENCES  question(question_id),
+	FOREIGN KEY (answer_id) REFERENCES  answer(answer_id),
+	CONSTRAINT CHK_post CHECK (
+		(question_id IS NOT NULL AND answer_id IS NULL)
+		OR
+		(question_id IS NULL AND answer_id IS NOT NULL)),
+	CONSTRAINT CHK_uniq_user_question UNIQUE (user_id, question_id),
+	CONSTRAINT CHK_uniq_user_answer UNIQUE (user_id, answer_id)
+);
+
++-------------+--------+------+-----+---------+----------------+
+| Field       | Type   | Null | Key | Default | Extra          |
++-------------+--------+------+-----+---------+----------------+
+| vote_id     | int    | NO   | PRI | NULL    | auto_increment |
+| user_id     | int    | NO   | MUL | NULL    |                |
+| question_id | int    | YES  | MUL | NULL    |                |
+| answer_id   | int    | YES  | MUL | NULL    |                |
+| vote_status | bit(1) | YES  |     | NULL    |                |
++-------------+--------+------+-----+---------+----------------+
+
+
+********** INSERT VOTE ***********
+INSERT INTO vote (vote_id, user_id, question_id, answer_id, vote_status) VALUES (
+	3101,
+	101,
+	1101,
+	NULL,
+	NULL
+);
+
+
+
+********* LOGIN PAGE **********
+SELECT user_id, username, password, email, dob, profile_picture
+FROM user
+WHERE (username="uname-101" AND password="pwd-101");
+
+********* MAIN PAGE **********
+SELECT q.question_id, COUNT(a.answer_id), q.post_date
+FROM question AS q
+INNER JOIN answer AS a
+ON q.question_id = a.question_id
+GROUP BY a.question_id
+ORDER BY q.post_date ASC
+LIMIT 5;
+
+SELECT question_id, user_id, title, content, post_date
+FROM question
+ORDER BY post_date ASC
+LIMIT 20;  
+
+********* QUESTION MANAGEMENT PAGE **********
+SELECT 
+q.user_id AS "user_id_Question", 
+q.question_id, 
+q.post_date AS "post_date_QUESTION", 
+a.answer_id, 
+a.user_id AS "user_id_ANSWER", 
+u.username AS "username_ANSWER",
+(SELECT COUNT(v.vote_status) FROM vote AS v WHERE v.vote_status = 0 AND a.answer_id = v.answer_id) AS "#_down_votes",
+(SELECT COUNT(v.vote_status) FROM vote AS v WHERE v.vote_status = 1 AND a.answer_id = v.answer_id) AS "#_up_votes"
+FROM question AS q
+INNER JOIN answer AS a
+ON q.question_id = a.question_id
+INNER JOIN user AS u
+ON a.user_id = u.user_id
+WHERE q.user_id = 101;
+
+
+********* QUESTION DETAIL PAGE **********
+SELECT 
+q.question_id,
+q.title AS "title_QUESTION",
+a.answer_id,
+a.title AS "title_ANSWER",
+a.user_id,
+u.username,
+(SELECT COUNT(v.vote_status) FROM vote AS v WHERE v.vote_status = 0 AND a.answer_id = v.answer_id) AS "#_down_votes",
+(SELECT COUNT(v.vote_status) FROM vote AS v WHERE v.vote_status = 1 AND a.answer_id = v.answer_id) AS "#_up_votes"
+FROM question AS q
+INNER JOIN answer AS a
+ON q.question_id = a.question_id
+INNER JOIN user AS u
+ON a.user_id = u.user_id
+WHERE q.question_id = 1101;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+INSERT INTO question (question_id, user_id, title, content, post_date)
+VALUES (
+	1101,
+	101,
+	"title-1101",
+	"c-1101",
+	"2002-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	101,
+	"title-1102",
+	"c-1102",
+	"2003-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	101,
+	"title-1103",
+	"c-1103",
+	"2001-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	105,
+	"title-1104",
+	"c-1104",
+	"2002-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	105,
+	"title-1105",
+	"c-1105",
+	"2003-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	107,
+	"title-1106",
+	"c-1106",
+	"2004-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	108,
+	"title-1107",
+	"c-1107",
+	"2001-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	109,
+	"title-1108",
+	"c-1108",
+	"2004-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	102,
+	"title-1109",
+	"c-1109",
+	"2005-01-01"
+);
+
+INSERT INTO question (user_id, title, content, post_date)
+VALUES (
+	101,
+	"title-1110",
+	"c-1110",
+	"2005-01-01"
+);

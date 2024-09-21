@@ -1,0 +1,91 @@
+INSERT INTO user (user_id, username, password, email, dob, profile_picture)
+VALUES (
+	101,
+	"uname-101",
+	"pwd-101",
+	"101@email.com",
+	"2000-01-01",
+	"101.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-102",
+	"pwd-102",
+	"102@email.com",
+	"2001-01-01",
+	"102.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-103",
+	"pwd-103",
+	"103@email.com",
+	"1999-01-01",
+	"103.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-104",
+	"pwd-104",
+	"104@email.com",
+	"2002-01-01",
+	"104.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-105",
+	"pwd-105",
+	"105@email.com",
+	"1998-01-01",
+	"105.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-106",
+	"pwd-106",
+	"106@email.com",
+	"2000-01-02",
+	"106.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-107",
+	"pwd-107",
+	"107@email.com",
+	"2000-01-03",
+	"107.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-108",
+	"pwd-108",
+	"108@email.com",
+	"2000-01-04",
+	"108.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-109",
+	"pwd-109",
+	"109@email.com",
+	"2000-01-05",
+	"109.png"
+);
+
+INSERT INTO user (username, password, email, dob, profile_picture)
+VALUES (
+	"uname-110",
+	"pwd-110",
+	"110@email.com",
+	"2000-01-01",
+	"110.png"
+);
+

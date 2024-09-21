@@ -1,0 +1,90 @@
+INSERT INTO answer (answer_id, question_id, user_id, title, content, post_date)
+VALUES (
+	2101,
+	1101,
+	101,
+	"title-2101",
+	"c-2101",
+	"2006-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1101,
+	102,
+	"title-2102",
+	"c-2102",
+	"2006-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1102,
+	108,
+	"title-2103",
+	"c-2103",
+	"2007-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1102,
+	101,
+	"title-2104",
+	"c-2104",
+	"2007-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1103,
+	101,
+	"title-2105",
+	"c-2105",
+	"2006-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1101,
+	109,
+	"title-2106",
+	"c-2106",
+	"2008-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1105,
+	107,
+	"title-2107",
+	"c-2107",
+	"2009-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1109,
+	106,
+	"title-2108",
+	"c-2108",
+	"2006-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1110,
+	106,
+	"title-2109",
+	"c-2109",
+	"2007-01-01"
+);
+
+INSERT INTO answer (question_id, user_id, title, content, post_date)
+VALUES (
+	1102,
+	110,
+	"title-2110",
+	"c-2110",
+	"2005-01-01"
+);
