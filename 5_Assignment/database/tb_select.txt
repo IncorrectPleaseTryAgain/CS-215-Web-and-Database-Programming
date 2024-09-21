@@ -1,0 +1,62 @@
++--------------------------MP BEFORE LOGIN-----------------------------+
+SELECT u.username, u.profile_photo, q.question_id, q.title, q.question, q.date_posted, COUNT(a.answer_id) AS numAnswers
+FROM questions AS q
+JOIN users AS u
+ON q.user_id = u.user_id
+LEFT JOIN answers AS a
+ON q.question_id = a.question_id
+GROUP BY q.question_id
+ORDER BY q.date_posted DESC
+LIMIT 5;
+
+
++--------------------------MP AFTER LOGIN-----------------------------+
+SELECT u.username, u.profile_photo, q.question_id, q.title, q.question, q.date_posted, COUNT(a.answer_id) AS numAnswers
+FROM questions AS q
+JOIN users AS u
+ON q.user_id = u.user_id
+LEFT JOIN answers AS a
+ON q.question_id = a.question_id
+GROUP BY q.question_id
+ORDER BY q.date_posted DESC
+LIMIT 20;
+
+
+SELECT q.title, COUNT(a.answer_id) AS numAnswers
+FROM questions AS q
+LEFT JOIN answers AS a
+ON q.question_id = a.question_id
+WHERE q.user_id=$uid
+GROUP BY q.question_id
+ORDER BY 2 DESC
+LIMIT 3; 
+
+
++----------------------QUESTION MANAGEMENT PAGE-----------------------+
+SELECT q.question_id, q.title, q.question, q.date_posted, COUNT(a.answer_id) AS numAnswers
+FROM questions AS q
+LEFT JOIN answers AS a
+ON q.question_id = a.question_id
+WHERE q.user_id=$uid
+GROUP BY q.question_id
+ORDER BY q.date_posted DESC;
+
++----------------------QUESTION DETAIL PAGE---------------------------+
+SELECT a.user_id, a.title, a.answer, a.date_posted, a.answer_id, u.username, u.profile_photo, SUM(v.vote_status) AS votes
+FROM answers AS a
+INNER JOIN users AS u
+ON a.user_id = u.user_id
+LEFT JOIN votes AS v
+ON a.answer_id = v.answer_id
+WHERE a.question_id=$qid
+GROUP BY a.answer_id
+ORDER BY a.date_posted DESC;
+
+SELECT vote_id, vote_status 
+FROM votes
+WHERE answer_id=$aid AND user_id=$uid;
+
++--------------------------------AVOTE--------------------------------+
+SELECT vote_status 
+FROM votes
+WHERE answer_id=$aid;

@@ -1,0 +1,126 @@
+CS 215 - Web and Database Programming
+
+Assignment 5: 
+Updated 4/1/2024
+
+Folders:
+	css:
+		All .css files are stored here.
+	database:
+		All .txt files with sql statements are stored here.
+	images:
+		All non-user images used in the website are used here.
+	jss:
+		All .js files are kept here.
+	php:
+		All .php files are stored here.
+		errors.txt is stored  here.
+		includes:
+			All pure .php files are stored here.
+			Used for verification, cleanup, sanitation, and databses queries.
+	uploads:
+		All user images are stored here.
+
+Files:
+
+css:
+	styles.css:
+		Used to style the hitml of the website.
+
+database:
+	tb_users.txt:
+		CREATE and INSERT sql statements for table users.
+	tb_questions.txt:
+		CREATE and INSERT sql statements for table questions.
+	tb_answers.txt:
+		CREATE and INSERT sql statements for table answers.
+	tb_votes.txt:
+		CREATE and INSERT sql statements for table votes.
+	tb_select.txt:
+		SELECT sql statements used per page of the website.
+
+jss:
+	eventHandlers.js:
+		Handles all .jss when events on the website trigger.
+
+	eventRegisterAfterLogin.js:
+		Declares any events for mp-after-login.php
+
+	eventRegisterBeforeLogin.js:
+		Declares any events for mp-after-login.php
+
+	eventRegisterQuestionCreation.js:
+		Declares any events for question-creation.php
+
+	eventRegisterQuestionDetails.js:
+		Declares any events for question-detail.php 
+
+	eventRegisterQuestionManagement.js:
+		Declares any events for question-management.php
+	
+	eventRegisterSignup.js:
+		Declares any events for signup.php
+
+php:
+	mp-after-login.php:
+		HTML and PHP for website main page AFTER the user has logged in.
+	
+	mp-before-login.php:
+		HTML and PHP for website main page BEFORE the user has logged in.
+
+	question-creation.php:
+		HTML and PHP for website question creation page.
+
+	question-detail.php:
+		HTML and PHP for website question detail page.
+	
+	question-management.php:
+		HTML and PHP for website question management page.
+
+	signup.php:
+		HTML and PHP for website signup page.
+
+	errors.txt:
+		TXT file tos store all errors codes, used when 'errs' is defined in GET.
+
+	includes:
+		db.inc.php:
+			PURE PHP file used to create connection to databse.
+
+		session.cfg.php:
+			PURE PHP file used to create session.
+	
+		login.inc.php:
+			PURE PHP file used to verify user login.
+
+		logout.inc.php:
+			PURE PHP file used to verify user logout.
+
+		qcreation.inc.php:
+			PURE PHP file used to verify user question creation.
+
+		qdetail.inc.php:
+			PURE PHP file used to verify user question details.
+		
+		signup.inc.php:
+			PURE PHP file used to verify user signup.
+
+		avote.inc.php:
+			PURE PHP file used to verify user vote.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

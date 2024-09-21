@@ -1,0 +1,22 @@
+000:Access Denied
+
+001:Empty Field
+
+101:Invalid Email
+102:Invalid Username
+103:Invalid Password
+104:Invalid Date Of Birth
+105:Passwords Do Not Match
+
+201:File Type Not Accepted
+202:File Size Too Large
+203:File Error Occurred
+
+301:Username Already Exists
+302:Email Already Used In Another Account
+
+401:Insert Failure: Please Try Again
+402:Update Failure: Please Try Again
+403:Select Failure: Please Try Again
+
+501:Account Access Denied: Invalid Details

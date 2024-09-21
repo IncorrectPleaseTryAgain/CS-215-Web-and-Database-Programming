@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
+html,
+body{
+    font-size: 15px;
+    /* add font */
+    font-family: Inconsolata, Arial, Helvetica, sans-serif;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    margin: 0px;
+    
+    font-size: 2rem;
+}
+
+
+/* PAGE HEADER --------> STARTS HERE */
+.page-header{
+    display: grid;
+    grid-template-columns: 75px 200px 1fr; /* website , search , menu */
+
+    margin: 0px 1%;
+
+    border-bottom: 2px lightslategray solid;
+}
+
+/* WBSITE NAME */
+.website-name{
+    align-self: center;
+}
+
+/* SEARCH */
+.page-header-nav{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+
+    align-items: center;
+}
+
+.search-form{
+    display: grid;
+    grid-template-columns: 1fr 75px;
+
+    width: 50%;
+    height: 50%;
+
+    justify-self: center;
+}
+
+.search-btn{    
+    margin-left: 5px;
+}
+
+/* MENU */
+.menu-btn{
+    justify-self: right;
+    height: 50%;
+}
+/* PAGE HEADER --------> ENDS HERE */
+/****************************************************/
+/* PAGE MAIN --------> STARTS HERE */
+.page-main-body{
+    display: grid;
+    grid-template-rows: 75px 1fr;
+}
+
+.page-main{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    margin: 1% 5%;
+}
+
+.card{
+    border-radius: 15px;
+
+    border: black 3px solid;
+    padding: 10px;
+}
+
+.card-header{
+    font-size: 1.3rem;
+    border-bottom: 1px solid black;
+    margin: 0px 15px;
+    /* text-align: center; */
+}
+/* QUESTION CARD */
+.qcard-pfp{
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+}
+/* SIDEBAR CARD */
+.scard-pfp{
+    width:50px;
+    height:50px;
+    border-radius: 25px;
+}
+
+.question-card{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+
+    margin-bottom: 25px;
+}
+
+.answer-card{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+
+    margin-bottom: 25px;
+}
+
+.card-clickable:hover{
+    cursor: pointer;
+}
+
+.vote-btn{
+    padding: 2px 0px;
+}
+
+.vote-btn:hover{
+    cursor: pointer;
+}
+
+.card-vote{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.card-vote-active{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.vote-active-green{
+    background-color: rgba(0, 255, 0, 0.5);
+    border-radius: 25%;
+}
+
+.vote-active-red{
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 25%;
+}
+
+/* .qcard-vote-num{
+    font-size: 1.2rem;
+} */
+
+/* .qcard-vote-btn{
+    background-color: lightgray;
+    border-radius: 25%;
+} */
+
+.qcard-body{
+    display: grid;
+    grid-template-rows: 75px 1fr 50px;
+
+    margin: 0px 10px;
+    pointer-events: none;
+}
+
+.qcard-header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    text-overflow: ellipsis;
+
+    align-items: center;
+
+    border-bottom: 1px solid lightgray;
+}
+
+.qcard-title{
+    margin-right: 10px;
+}
+
+.acard-title {
+    font-size: 17px;
+}
+
+.acard-question{
+    font-size: 12px;
+}
+
+.qcard-author{
+    display: flex;
+    align-items: center;
+}
+
+.qcard-author p{
+    padding-right: 5px;
+}
+
+
+.question-footer{
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+/* TEXTAREA */
+.textarea-card{
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+}
+
+.textarea-card input[type="text"]{
+    font-size: 1.5rem;
+}
+
+.textarea-card textarea{
+    resize: none;
+    font-size: 1.2rem;
+}
+
+.question-creation-input{
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+
+.textarea-card div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 5px;
+}
+
+.textarea-card div input[type="submit"]{
+    font-size: 1.3rem;
+    width: 75px;
+}
+
+.character-count{
+    opacity: 50%;
+}
+
+/* SIGN UP */
+.page-main-signup{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+.signup-card{
+    width: 500px;
+    margin-top: 5%;
+    padding: 0px;
+}
+
+.signup-card-header{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-card-body{
+    display: grid;
+
+    margin: 5%;
+    
+    font-size: 1.2rem;
+}
+
+.signup-card-body input{
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+.signup-card-body input[type="submit"]{
+    height: 55px;
+}
+
+/* PAGE MAIN --------> ENDS HERE */
+/****************************************************/
+/* ASIDE --------> STARTS HERE */
+.sidebar-card{
+    position: fixed;
+    margin-left: 8%;
+    margin-top: 75px;
+
+    width: 17%;
+
+    text-align: center;
+}
+
+.sidebar-card-info-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-card-user{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-card-user p{
+    padding-left: 5px;
+
+    font-size: 1.5rem;
+}
+
+.sidebar-card-body{
+    display: grid;
+
+    margin: 5%;
+    text-align: left;
+    
+    font-size: 1.3rem;
+}
+
+.sidebar-card-body > input[type="text"],
+.sidebar-card-body > input[type="password"]{
+    height: 25px
+}
+
+.sidebar-card-input-label-password{
+    margin-top: 15px
+}
+
+.sidebar-card-password-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.sidebar-card-password-options input[type="checkbox"]{
+    margin-left: 0px;
+}
+
+.sidebar-card-body input[type="submit"]{
+    
+    width: 95%;
+    height: 60px;
+
+    margin: 2.5%;
+
+    font-size: 1.5rem;
+}
+
+.sidebar-card-link-my-questions{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.sidebar-card-qpreview{
+    display: grid;
+    grid-template-rows: 1fr 35px;
+    margin: 10px;
+    padding: 4px;
+    
+    border: 1px solid black;
+    border-radius: 5px;
+
+    text-align: center;
+}
+
+.sidebar-card-qpreview-title{
+    margin: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-card-qpreview-stats{
+    display: flex;
+    justify-content: space-between;
+    
+    border-top: 1px solid black;
+
+    font-size: 0.9rem;
+}
+
+.sidebar-card-qpreview-votes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+/****************************************************/
+/* EVENT TRIGGERED & DOM MANIPULATION --------> STARTS HERE */
+.hidden{
+    visibility: hidden;
+}
+
+.red-border{
+    border: 1px solid red;
+}
+
+.red-underline{
+    text-decoration: underline;
+}
+
+.color-red{
+    color: red;
+}
+
+.error-message{
+    color: red;
+    font-size: 0.8rem;
+    /* margin: 0px 1px; */
+    margin: 0px;
+    text-align: right;
+}

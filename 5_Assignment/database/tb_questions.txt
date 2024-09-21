@@ -1,0 +1,32 @@
++-------------+--------------+------+-----+-----------+-------------------+
+| Field       | Type         | Null | Key | Default   | Extra             |
++-------------+--------------+------+-----+-----------+-------------------+
+| question_id | int          | NO   | PRI | NULL      | auto_increment    |
+| user_id     | int          | NO   | MUL | NULL      |                   |
+| title       | varchar(255) | NO   |     | NULL      |                   |
+| question    | text         | NO   |     | NULL      |                   |
+| date_posted | date         | NO   |     | curdate() | DEFAULT_GENERATED |
++-------------+--------------+------+-----+-----------+-------------------+
+
++---------------------------------------------------------------------+
+
+CREATE TABLE questions (
+	question_id INT AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	question TEXT NOT NULL,
+	date_posted DATETIME NOT NULL DEFAULT NOW(),
+
+	PRIMARY KEY (question_id),
+
+	FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
++---------------------------------------------------------------------+
+
+INSERT INTO questions (user_id, title, question)
+VALUES (
+	1,
+	"Q-title-1",
+	"question-1"
+);
