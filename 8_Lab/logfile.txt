@@ -1,0 +1,126 @@
+==========1.0===========
+
+CREATE TABLE Loggers (
+	user_id INT NOT NULL AUTO_INCREMENT,
+	first_name VARCHAR(255),
+	last_name VARCHAR(255),
+	username VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	dob DATE,
+	profile_photo VARCHAR(255),
+	PRIMARY KEY (user_id)
+);
+
+CREATE TABLE Logins (
+	login_id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	timestamp TIMESTAMP NOT NULL,
+	ip_address VARCHAR(255),
+	PRIMARY KEY (login_id),
+	FOREIGN KEY (user_id) REFERENCES Loggers(user_id)
+);
+
+==========2.1===========
+
+INSERT INTO Loggers (first_name, last_name, username, password, dob, profile_photo) VALUES (
+	"Jane",
+	"Doe",
+	"jd999",
+	"abc12345",
+	"1990-08-15",
+	"abc.jpeg"
+);
+
+INSERT INTO Loggers (first_name, last_name, username, password, dob, profile_photo) VALUES (
+	"John",
+	"Doe",
+	"jd101",
+	"123abbcd",
+	"1992-09-1",
+	"picture.jpeg"
+);
+
+==========2.2=========== NOT WORKING !!! ASK ZOOM HELP
+
+INSERT INTO Logins (user_id, timestamp, ip_address)
+	SELECT 
+	Loggers.user_id,
+	"2022-05-05 14:00:00",
+	"192.168.100.100"
+	FROM Loggers WHERE first_name="Jane" AND last_name="Doe"
+;
+
+INSERT INTO Logins (user_id, timestamp, ip_address)
+	SELECT 
+	Loggers.user_id,
+	"2022-02-04 12:30:00",
+	"191.198.111.101"
+	FROM Loggers WHERE first_name="John" AND last_name="Doe"
+;
+
+INSERT INTO Logins (user_id, timestamp, ip_address)
+	SELECT 
+	Loggers.user_id,
+	"2022-06-10 8:30:00",
+	"192.168.100.100"
+	FROM Loggers WHERE first_name="Jane" AND last_name="Doe"
+;
+
+INSERT INTO Logins (user_id, timestamp, ip_address)
+	SELECT 
+	Loggers.user_id,
+	"2022-06-11 10:15:02",
+	"192.168.100.100"
+	FROM Loggers WHERE first_name="Jane" AND last_name="Doe"
+;
+
+INSERT INTO Logins (user_id, timestamp, ip_address)
+	SELECT 
+	Loggers.user_id,
+	"2022-08-15 9:15:31",
+	"191.198.111.101"
+	FROM Loggers WHERE first_name="John " AND last_name="Doe"
+;
+
+INSERT INTO Logins (user_id, timestamp, ip_address)
+	SELECT 
+	Loggers.user_id,
+	"2022-08-16 21:00:00",
+	"191.198.111.101"
+	FROM Loggers WHERE first_name="John" AND last_name="Doe"
+;
+
+INSERT INTO Logins (user_id, timestamp, ip_address)
+	SELECT 
+	Loggers.user_id,
+	"2022-08-16 21:01:00",
+	"191.198.111.101"
+	FROM Loggers WHERE first_name="Jane" AND last_name="Doe"
+;
+
+==========3.0===========
+
+UPDATE Loggers 
+SET username="jd@uregina.ca"
+WHERE user_id="1";
+
+==========4.a===========
+
+SELECT user_id, first_name, last_name
+FROM Loggers
+WHERE username="jd@uregina.ca" AND password="abc12345";
+
+==========4.b===========
+
+SELECT LG.user_id, LG.first_name, LG.last_name, LG.username, LG.password, LG.dob, LG.profile_photo, COUNT(LI.login_id)
+FROM Loggers as LG, Logins as LI
+WHERE LG.user_id=LI.user_id
+GROUP BY user_id;
+
+==========4.c===========
+
+SELECT user_id, timestamp, ip_address 
+FROM Logins
+WHERE user_id=1
+ORDER BY timestamp DESC
+LIMIT 3;
